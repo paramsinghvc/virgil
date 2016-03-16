@@ -1,0 +1,22 @@
+{
+	"total": "34",
+	"collection": [{
+		"title": "Web Analytics Manager",
+		"company": "Facebook",
+		"location": "Palo Alto, CA",
+		"logo": "",
+		"scale": "5.5"
+	} {
+		"title": "SEO Program Manager",
+		"company": "Teehan & Lax",
+		"location": "New York",
+		"logo": "",
+		"scale": "1.7"
+	}, {
+		"title": "Big Data Scientist",
+		"company": "Twitter",
+		"location": "Sunnyvale, CA",
+		"logo": "",
+		"scale": "3.2"
+	}]
+}
