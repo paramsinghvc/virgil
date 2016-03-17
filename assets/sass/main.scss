@@ -124,7 +124,7 @@ body {
                         font-weight: 500;
                         color: #fff;
                     }
-                    &:hover{
+                    &:hover {
                         .evaluationBtn {
                             display: block;
                         }
@@ -228,6 +228,34 @@ body {
             &:hover {
                 color: rgba(255 ,255, 255, 1) !important;
             }
+        }
+    }
+}
+.popover {
+    max-width: 500px;
+    padding: 10px 20px;
+    padding-right: 0;
+    .companyPopover {
+        p {
+            font-size: 18px;
+            color: $primaryColor;
+        }
+        img {
+            height: 100%;
+            width: 100%;
+            border: 1px solid #ebebeb;
+        }
+        div.desc {
+            font-size: 12px !important;
+        }
+        .followBtn {
+            border: none;
+            box-shadow: none;
+            background: $accentColor;
+            font-size: 9px;
+            margin-top: 10px;
+            width: 100%;
+            color: #fff;
         }
     }
 }

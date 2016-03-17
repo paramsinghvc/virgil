@@ -6,9 +6,27 @@
     <title ng-bind="master.appName"></title>
     <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/build.css">
+    <script type="text/ng-template" id="companyTpl">
+        <div class="row companyPopover">
+            <div class="col-xs-4">
+                <div class="row">
+                    <img ng-src="{{'/assets/img/' + popoverData.imageUrl}}">
+                </div>
+                <div class="row">
+                    <button class="followBtn btn">FOLLOWING</button>
+                </div>
+            </div>
+            <div class="col-xs-8">
+                <p> {{popoverData.title}}</p>
+                <div class="desc">
+                    {{popoverData.description}}
+                </div>
+            </div>
+        </div>
+    </script>
 </head>
 
-<body ng-controller="userCtrl as user">
+<body ng-controller="userCtrl as user" ng-cloak>
     <div class="container-fluid topBar">
         <div class="container">
             <div class="row top10">
@@ -81,7 +99,7 @@
                                             </div>
                                             <div class="pull-left sponsored-by-wrapper" ng-if="career.sponsored_by">
                                                 &middot;&nbsp; Sponsored By :
-                                                <div class="sponsored">{{career.sponsored_by.title}}</div>
+                                                <div class="sponsored" popover popover-template-url="companyTpl" popover-data="career.sponsored_by">{{career.sponsored_by.title}}</div>
                                             </div>
 
                                         </div>
