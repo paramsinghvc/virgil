@@ -35,11 +35,11 @@ gulp.task('transpile', function() {
 gulp.task('transpile:watch', ['transpile'], reload);
 
 gulp.task('serve:prod', ['transpile', 'sass'], function() {
-	connect.server({
-		root: './',
-		port: process.env.PORT || 5000,
-		livereload: false
-	})
+    connect.server({
+       root: './',
+       port: process.env.PORT || 5000,
+       livereload: false
+   });
 })
 
 gulp.task('serve:dev', ['transpile', 'sass'], function() {
