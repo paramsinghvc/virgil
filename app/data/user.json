@@ -1,42 +1,44 @@
 {
 	"name": "Dylan",
-	"profile_photo": "",
+	"profile_photo": "user.png",
 	"notifications": {
 		"total": "3",
 		"collection": [{
-			"photo": "",
+			"photo": "fb.png",
 			"message": "Facebook is looking for UX Evangelist and they want you to apply."
 		}, {
-			"photo": "",
+			"photo": "twitter.png",
 			"message": "Twitter added 13 new jobs that might interest you."
 		}, {
-			"photo": "",
+			"photo": "profile_incomplete.png",
 			"message": "Your profile is incomplete. Only 4 more steps to complete your profile."
 		}]
 	},
 	"action_plan": {
 		"total": "23",
 		"collection": [{
-			"description": "get experience coding in CSS or HTML."
+			"description": "Get experience coding in CSS or HTML."
 		}, {
 			"description": "Get experience using one of the A/B Testing Frameworks."
-		}, {
-			"photo": "",
-			"message": "Your profile is incomplete. Only 4 more steps to complete your profile."
 		}]
 	},
 	"skills": {
 		"total": "23",
 		"stats": [{
-			"technology": "75"
+			"key": "technology",
+			"value": "63"
 		}, {
-			"finance": "4"
+			"key": "finance",
+			"value": "6"
 		}, {
-			"media": "4"
+			"key": "media",
+			"value": "7"
 		}, {
-			"marketing": "8"
+			"key": "marketing",
+			"value": "12"
 		}, {
-			"other": "9"
+			"key": "other",
+			"value": "12"
 		}]
 	}
 }

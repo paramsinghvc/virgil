@@ -1,6 +1,4 @@
-import {
-	masterCtrl
-} from './filters/masterCtrl';
+import {UpperCase} from './filters/upperCase';
 
-export default angular.module('virgil.filters')
-	.filter('masterCtrl', masterCtrl)
+export default angular.module('virgil.filters', [])
+	.filter('upperCase', UpperCase)

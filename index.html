@@ -4,14 +4,228 @@
 <head>
     <meta charset="utf-8">
     <title ng-bind="master.appName"></title>
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/build.css">
 </head>
 
-<body>
+<body ng-controller="userCtrl as user">
+    <div class="container-fluid topBar">
+        <div class="container">
+            <div class="row top10">
+                <div class="col-sm-1 logo">
+                    <img src="/assets/img/logo.png">
+                </div>
+                <div class="col-sm-6 searchBox">
+                    <input class="form-control" type="text" placeholder="Search for Evaluations, Companies, Jobs...">
+                </div>
+                <div class="col-sm-5 pull-right visible-sm visible-md visible-lg">
+                    <img ng-src="{{master.imagesBase + user.info.profile_photo}}" class="img-circle pull-right">
+                    <div class="notification-bell pull-right">
+                        <img ng-src="{{master.imagesBase + 'bell.png'}}" alt="" />
+                        <span class="badge">{{user.info.notifications.total}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
 
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <nav class='navbar navbar-inverse navbar-static-top main-nav'>
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-expanded="false">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div class="collapse navbar-collapse" id="bs-navbar">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="#">Home</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Companies</a></li>
+                            <li><a href="#">Jobs</a></li>
+                            <li><a href="#">Action Steps</a></li>
+                            <li><a href="#">My Skills</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div class="container site-wrapper">
+        <div class="row">
+            <div class="col-sm-8">
+                <div class="white-section" ng-controller="careersCtrl as careers">
+                    <div class="sideIcon careersSideIcon">
+                    </div>
+                    <div class="sectionHeader">
+                        <span>Recommended</span>
+                        <p>Careers</p>
+                    </div>
+                    <ul class="sectionList top40">
+                        <li class="row career bottom20" ng-repeat="career in careers.collection">
+                            <div class="col-xs-1">
+                                <img ng-src="{{master.imagesBase + 'career-' + ($index + 1) + '.png'}}" alt="" />
+                            </div>
+                            <div class="col-xs-11 contentBlock">
+                                <div class="row">
+                                    <div class="col-xs-8">
+                                        <div class="row title">
+                                            {{career.title}}
+                                        </div>
+                                        <div class="row top10">
+                                            <div class="tag pull-left">
+                                                {{career.tag | upperCase}}
+                                            </div>
+                                            <div class="pull-left sponsored-by-wrapper" ng-if="career.sponsored_by">
+                                                &middot;&nbsp; Sponsored By :
+                                                <div class="sponsored">{{career.sponsored_by.title}}</div>
+                                            </div>
+
+                                        </div>
+                                        <div class="row desc top10 bottom10">
+                                            {{career.description}}
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <button type="button" class="evaluationBtn form-control btn btn-block">TAKE EVALUATIONS</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="row total-entries">
+                        View All {{careers.totalEntries}} Recommended Careers <span class="glyphicon glyphicon-chevron-right"></span>
+                    </div>
+                </div>
+                <div class="white-section" ng-controller="companiesCtrl as companies">
+                    <div class="sideIcon careersSideIcon">
+                    </div>
+                    <div class="sectionHeader">
+                        <span>Recommended</span>
+                        <p>Companies</p>
+                    </div>
+                    <ul class="sectionList top40">
+                        <li class="row bottom20" ng-repeat="company in companies.collection">
+                            <div class="col-xs-2 col-sm-1">
+                                <img ng-src="{{master.imagesBase + company.logo}}">
+                            </div>
+                            <div class="col-xs-10 col-sm-11 contentBlock">
+                                <div class="row">
+                                    <div class="col-xs-8 bottom30">
+                                        <div class="row title">
+                                            {{company.title}}
+                                        </div>
+                                        <div class="row companyStats">
+                                            {{company.careers}} Careers, {{company.jobs}} Jobs
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="row total-entries">
+                        View All {{companies.totalEntries}} Recommended Companies <span class="glyphicon glyphicon-chevron-right"></span>
+                    </div>
+                </div>
+                <div class="white-section" ng-controller="jobsCtrl as jobs">
+                    <div class="sideIcon jobsSideIcon">
+                    </div>
+                    <div class="sectionHeader">
+                        <span>Recommended</span>
+                        <p>Jobs</p>
+                    </div>
+                    <ul class="sectionList top40">
+                        <li class="row bottom20" ng-repeat="job in jobs.collection">
+                            <div class="col-xs-2 col-sm-1">
+                                <img ng-src="{{master.imagesBase + job.logo}}">
+                            </div>
+                            <div class="col-xs-10 col-sm-11 contentBlock">
+                                <div class="row">
+                                    <div class="col-xs-9 bottom30">
+                                        <div class="row title">
+                                            {{job.title}}
+                                        </div>
+                                        <div class="row">
+                                            {{job.company}}
+                                        </div>
+                                        <div class="row">
+                                            {{job.location}}
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="scale pull-right">{{job.scale}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="row total-entries">
+                        View All {{jobs.totalEntries}} Recommended Jobs <span class="glyphicon glyphicon-chevron-right"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="white-section">
+                    <div class="row widgetHeader">
+                        NOTIFICATIONS <span class="badge">{{user.info.notifications.total}}</span>
+                    </div>
+                    <ul class="widgetList">
+                        <li ng-repeat="noti in user.info.notifications.collection" class="row">
+                            <div class="col-xs-3">
+                                <img ng-src="{{master.imagesBase + noti.photo}}">
+                            </div>
+                            <div class="col-xs-9">
+                                {{noti.message}}
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="white-section">
+                    <div class="row widgetHeader">
+                        MY ACTION PLAN <span class="view-all pull-right">View All ({{user.info.action_plan.total}})</span>
+                    </div>
+                    <ul class="widgetList">
+                        <li ng-repeat="plan in user.info.action_plan.collection" class="row">
+                            <div class="col-xs-2">
+                                <img ng-src="{{master.imagesBase + 'info.png'}}">
+                            </div>
+                            <div class="col-xs-10">
+                                {{plan.description}}
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="white-section">
+                    <div class="row widgetHeader">
+                        MY SKILLS <span class="badge">{{user.info.skills.total}}</span><span class="view-all pull-right">View Details</span>
+                    </div>
+                    <div class="row text-center">
+                        <chart chart-type="pie" chart-data="user.info.skills.chartData" class="top20" width="200" height="200"></chart>
+                    </div>
+                    <div class="row top20">
+                        <ul class="palette row">
+                            <li class="col-sm-6 col-xs-12" ng-repeat="palette in user.info.skills.paletteData">
+                                <div class="droplet" ng-style="palette.color">
+                                </div>
+                                <div class="label">
+                                    {{palette.label | upperCase}}
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/Chart.js/Chart.min.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <!-- <script src="bower_components/randomcolor/randomcolor.js"></script> -->
     <script src="bower_components/angular/angular.min.js"></script>
     <script src="app/build/index.js"></script>
 </body>

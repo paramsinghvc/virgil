@@ -4,19 +4,19 @@
 		"title": "Web Analytics Manager",
 		"company": "Facebook",
 		"location": "Palo Alto, CA",
-		"logo": "",
+		"logo": "fb.png",
 		"scale": "5.5"
-	} {
+	}, {
 		"title": "SEO Program Manager",
 		"company": "Teehan & Lax",
 		"location": "New York",
-		"logo": "",
+		"logo": "company.png",
 		"scale": "1.7"
 	}, {
 		"title": "Big Data Scientist",
 		"company": "Twitter",
 		"location": "Sunnyvale, CA",
-		"logo": "",
+		"logo": "twitter.png",
 		"scale": "3.2"
 	}]
 }

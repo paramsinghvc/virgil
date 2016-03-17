@@ -1,5 +1,6 @@
 let config = {
-    appName : 'Virgil'    
+    appName : 'Virgil',
+    imagesBase : '/assets/img/'    
 }
 
 export default config;

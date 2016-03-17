@@ -1,0 +1,233 @@
+$primaryColor: rgb(59, 125, 199);
+$primaryColorHover: rgb(53, 109, 172);
+$accentColor: rgb(133, 213, 94);
+$textColor: rgb(117, 117, 117);
+@mixin css3($property, $value) {
+    @each $prefix in -webkit-,
+    -moz-,
+    -ms-,
+    -o-,
+    '' {
+        #{$prefix}#{$property}: $value;
+    }
+}
+@for $i from 1 through 16 {
+    .top#{($i * 5)} {
+        margin-top: $i*5px;
+    }
+}
+@for $i from 1 through 16 {
+    .bottom#{($i * 5)} {
+        margin-bottom: $i*5px;
+    }
+}
+@for $i from 1 through 16 {
+    .right#{($i * 5)} {
+        margin-right: $i*5px;
+    }
+}
+* {
+    padding: 0;
+    margin: 0;
+}
+body {
+    background: #ebebeb;
+    color: $textColor;
+}
+.main-nav {
+    background: $primaryColor;
+    border: none;
+}
+.topBar {
+    background: #fff;
+    padding-bottom: 10px;
+}
+.site-wrapper {
+    background: #ebebeb;
+    .white-section {
+        background: #fff;
+        margin-bottom: 20px;
+        border-radius: 4px;
+        padding: 20px;
+        .sideIcon {
+            background: url('../img/companies.png') no-repeat;
+            height: 40px;
+            position: absolute;
+            width: 40px;
+            left: -2px;
+        }
+        .sideIcon.careersSideIcon {
+            background: url('../img/companies.png') no-repeat;
+        }
+        .sideIcon.jobsSideIcon {
+            background: url('../img/jobs.png') no-repeat;
+        }
+        .sectionHeader {
+            margin-left: 20px;
+            span {
+                font-size: 12px;
+            }
+            p {
+                font-weight: 500;
+            }
+        }
+        .sectionList {
+            list-style: none;
+            li {
+                // &:last-of-type{
+                //     border-bottom: 1px solid #dbdbdb;
+                // }
+                .contentBlock {
+                    border-bottom: 1px solid #dbdbdb;
+                    padding-left: 35px;
+                    .title {
+                        font-size: 18px;
+                        color: $primaryColor;
+                    }
+                    .tag {
+                        border: 1px solid $textColor;
+                        border-radius: 2px;
+                        padding: 1px 4px;
+                        font-size: 11px;
+                    }
+                    .sponsored-by-wrapper {
+                        margin-left: 8px;
+                        color: #757575;
+                        font-size: 12px;
+                        .sponsored {
+                            display: inline-block;
+                            color: $primaryColor;
+                        }
+                    }
+                    .desc {
+                        font-size: 15px;
+                    }
+                    .companyStats {
+                        font-size: 14px;
+                    }
+                    .scale {
+                        width: 60px;
+                        height: 60px;
+                        font-size: 22px;
+                        border-radius: 50%;
+                        color: #fff;
+                        text-align: center;
+                        padding-top: 15px;
+                        background: $accentColor;
+                    }
+                    .evaluationBtn {
+                        font-size: 12px;
+                        display: none;
+                        background: $primaryColor;
+                        border: none;
+                        box-shadow: none;
+                        font-weight: 500;
+                        color: #fff;
+                    }
+                    &:hover{
+                        .evaluationBtn {
+                            display: block;
+                        }
+                    }
+                }
+                &:nth-of-type(2) {
+                    .scale {
+                        background: #f57b7b;
+                    }
+                }
+                &:last-of-type {
+                    .contentBlock {
+                        border-bottom: none;
+                        .scale {
+                            background: #f7cc58;
+                        }
+                    }
+                }
+            }
+        }
+        .total-entries {
+            border-top: 1px solid #dbdbdb;
+            padding-right: 7px;
+            font-size: 14px;
+            color: #868686;
+            text-align: right;
+            padding-top: 10px;
+            margin-bottom: -6px;
+        }
+        .widgetHeader {
+            font-size: 12px;
+            font-weight: 500;
+            padding-left: 18px;
+            color: #aeaeae;
+            .badge {
+                padding: 4px 7px;
+                border-radius: 4px;
+                position: relative;
+                left: 4px;
+                top: -3px;
+                background-color: 878787;
+            }
+            .view-all {
+                color: $primaryColor;
+            }
+        }
+        ul.widgetList {
+            margin-top: 30px;
+            list-style: none;
+            li {
+                margin-bottom: 18px;
+            }
+        }
+        .palette {
+            list-style: none;
+            padding: 20px;
+            li {
+                .droplet {
+                    margin-bottom: 12px;
+                    width: 25px;
+                    height: 12px;
+                    border-radius: 4px;
+                    float: left;
+                }
+                .label {
+                    color: $textColor;
+                    float: left;
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+}
+.notification-bell {
+    margin-right: 30px;
+    .badge {
+        border-radius: 50%;
+        background: $primaryColor;
+        padding: 2px 5px;
+        position: relative;
+        top: 7px;
+        left: -11px;
+    }
+}
+.nav {
+    .active {
+        a {
+            background: $primaryColorHover !important;
+        }
+    }
+}
+.navbar-nav {
+    .active {
+        a {
+            color: rgba(255 ,255, 255, 1) !important;
+        }
+    }
+    >li {
+        >a {
+            color: rgba(255 ,255, 255, 0.6) !important;
+            &:hover {
+                color: rgba(255 ,255, 255, 1) !important;
+            }
+        }
+    }
+}

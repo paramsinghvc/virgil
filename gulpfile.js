@@ -6,7 +6,8 @@ var gulp = require('gulp'),
 	plumber = require('gulp-plumber'),
 	reload = browserSync.reload,
 	sass = require('gulp-sass'),
-	concat = require('gulp-concat');
+	concat = require('gulp-concat'),
+	connect = require('gulp-connect');
 
 
 gulp.task('sass', function() {
@@ -18,27 +19,35 @@ gulp.task('sass', function() {
 
 gulp.task('sass:watch', ['sass'], reload);
 
-gulp.task('transpile', function(){
-    return browserify({
-        entries : ['app/src/index.js'],
-        debug : true
-    }).on('error', function(err){
-        console.log(err)
-        this.emit("end");
-    }).transform(babelify)
-    .bundle()
-    .pipe(source('index.js'))
-    .pipe(gulp.dest('app/build'))
+gulp.task('transpile', function() {
+	return browserify({
+			entries: ['app/src/index.js'],
+			debug: true
+		}).on('error', function(err) {
+			console.log(err)
+			this.emit("end");
+		}).transform(babelify)
+		.bundle()
+		.pipe(source('index.js'))
+		.pipe(gulp.dest('app/build'))
 })
 
 gulp.task('transpile:watch', ['transpile'], reload);
 
-gulp.task('serve:dev', ['transpile', 'sass'] function(){
-    browserSync.init({
-        server: {
-            baseDir : './'
-        }
-    });
-    gulp.watch(['app/src/**/*.js'], ['transpile:watch']);
-    gulp.watch(['assets/sass/**/*.scss'], ['sass:watch']);
+gulp.task('serve:prod', ['transpile', 'sass'], function() {
+	connect.server({
+		root: './',
+		port: process.env.PORT || 5000,
+		livereload: false
+	})
+})
+
+gulp.task('serve:dev', ['transpile', 'sass'], function() {
+	browserSync.init({
+		server: {
+			baseDir: './'
+		}
+	});
+	gulp.watch(['app/src/**/*.js'], ['transpile:watch']);
+	gulp.watch(['assets/sass/**/*.scss'], ['sass:watch']);
 })

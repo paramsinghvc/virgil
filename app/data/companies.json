@@ -4,16 +4,16 @@
 		"title": "Facebook",
 		"careers": "42",
 		"jobs": "126",
-		"logo": ""
+		"logo": "fb.png"
 	}, {
 		"title": "This ones's got a really long name.",
 		"careers": "42",
 		"jobs": "126",
-		"logo": ""
+		"logo": "company.png"
 	}, {
-		"title": "Facebook",
+		"title": "Amazon",
 		"careers": "42",
 		"jobs": "126",
-		"logo": ""
+		"logo": "amazon.png"
 	}]
 }
