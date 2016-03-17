@@ -7,7 +7,7 @@ angular.module('virgil', ['virgil.controllers',
 	'virgil.directives',
 	'virgil.filters',
 	'virgil.services'
-]);
+])
 
 
 angular.bootstrap(document, ['virgil']);
