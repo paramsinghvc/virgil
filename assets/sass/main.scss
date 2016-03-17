@@ -81,6 +81,7 @@ body {
                     border-bottom: 1px solid #dbdbdb;
                     padding-left: 35px;
                     .title {
+                        cursor : pointer;
                         font-size: 18px;
                         color: $primaryColor;
                     }
@@ -96,6 +97,7 @@ body {
                         font-size: 12px;
                         .sponsored {
                             display: inline-block;
+                            cursor : pointer;
                             color: $primaryColor;
                         }
                     }
@@ -121,6 +123,7 @@ body {
                         background: $primaryColor;
                         border: none;
                         box-shadow: none;
+                        cursor : pointer;
                         font-weight: 500;
                         color: #fff;
                     }
@@ -150,6 +153,7 @@ body {
             padding-right: 7px;
             font-size: 14px;
             color: #868686;
+            cursor : pointer;
             text-align: right;
             padding-top: 10px;
             margin-bottom: -6px;
@@ -168,6 +172,7 @@ body {
                 background-color: 878787;
             }
             .view-all {
+                cursor : pointer;
                 color: $primaryColor;
             }
         }
@@ -200,6 +205,7 @@ body {
 }
 .notification-bell {
     margin-right: 30px;
+    cursor : pointer;
     .badge {
         border-radius: 50%;
         background: $primaryColor;
@@ -226,6 +232,7 @@ body {
         >a {
             color: rgba(255 ,255, 255, 0.6) !important;
             &:hover {
+                cursor : pointer;
                 color: rgba(255 ,255, 255, 1) !important;
             }
         }
@@ -237,6 +244,7 @@ body {
     padding-right: 0;
     .companyPopover {
         p {
+            cursor: pointer;
             font-size: 18px;
             color: $primaryColor;
         }
