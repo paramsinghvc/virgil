@@ -33,6 +33,7 @@ $textColor: rgb(117, 117, 117);
 body {
     background: #ebebeb;
     color: $textColor;
+    overflow-x: hidden;
 }
 .main-nav {
     background: $primaryColor;
@@ -54,7 +55,7 @@ body {
             height: 40px;
             position: absolute;
             width: 40px;
-            left: -2px;
+            left: -1px;
         }
         .sideIcon.careersSideIcon {
             background: url('../img/companies.png') no-repeat;
@@ -90,9 +91,9 @@ body {
                         border-radius: 2px;
                         padding: 1px 4px;
                         font-size: 11px;
+                        margin-right: 8px;
                     }
                     .sponsored-by-wrapper {
-                        margin-left: 8px;
                         color: #757575;
                         font-size: 12px;
                         .sponsored {

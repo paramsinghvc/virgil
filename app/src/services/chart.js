@@ -1,5 +1,6 @@
 export default class ChartSvc {
-	constructor() {
+	constructor($filter) {
+        this.$filter = $filter;
 		this.chartColors = ['#ff7575', '#ffae82', '#75e8d4', '#ffdd69', '#6bde83'];
 	}
 
@@ -11,7 +12,7 @@ export default class ChartSvc {
 		skills.stats.forEach(function(skill, index) {
 			data.push({
 				value: skill.value,
-				label: skill.key,
+				label: this.$filter('capitalize')(skill.key),
 				color: this.chartColors[index]
 			});
 
@@ -29,3 +30,5 @@ export default class ChartSvc {
 	}
 
 }
+
+ChartSvc.$inject = ['$filter'];
