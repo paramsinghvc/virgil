@@ -266,6 +266,22 @@ body {
         }
     }
 }
+.searchBox {
+    input[type='text'] {
+        background: url("../img/search.png") no-repeat 7px center !important;
+        padding-left: 33px;
+    }
+}
+.navbar-toggle {
+    border: none !important;
+    background: none !important;
+    &:hover {
+        background: none !important;
+    }
+}
+.navbar-collapse {
+    border: none;
+}
 [ng\:cloak],
 [ng-cloak],
 [data-ng-cloak],
