@@ -55,7 +55,7 @@ body {
             height: 40px;
             position: absolute;
             width: 40px;
-            left: -1px;
+            left: 0px;
         }
         .sideIcon.careersSideIcon {
             background: url('../img/companies.png') no-repeat;
@@ -83,7 +83,7 @@ body {
                     padding-left: 35px;
                     .title {
                         cursor: pointer;
-                        font-size: 18px;
+                        font-size: 1.125em;
                         color: $primaryColor;
                     }
                     .tag {

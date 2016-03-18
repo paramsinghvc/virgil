@@ -5,7 +5,9 @@ class MasterController {
         this.$scope = $scope;
         this.appName = config.appName;
         this.imagesBase = config.imagesBase;
-        console.log(config)
+        this.chartOptions = {
+            segmentShowStroke : false
+        }
 	}
 }
 
